@@ -24,7 +24,7 @@ pipeline {
             echo "Deploy step"
              sleep 10 
           }   
-      } 
-  }  
- }
+       } 
+     }  
+   }
 }
