@@ -21,8 +21,5 @@ stages {
         sleep 10
       }
     }
-
   }
-
-
 }
