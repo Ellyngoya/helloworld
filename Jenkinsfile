@@ -12,5 +12,7 @@ pipeline {
       steps {
       echo "Build step"
       sleep 10     
-    }    
+      }
+   }    
 }
+     
