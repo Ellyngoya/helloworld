@@ -1,26 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('build'){
+    stage('Build'){
       steps {
-        echo "Build step"
-	sleep 10
-      }
-    }
-    stages {
-    stage('test'){
-      steps {
-        echo "test step"
+        echo "Build steps"
         sleep 10
-      }
-    }
-stages {
-    stage('deploy'){
-      steps {
-        echo "deploy step"
-        sleep 10
-      }
-    }
-  }
- }
+}
 }
