@@ -3,6 +3,11 @@ pipeline {
   tools {
    maven 'M2_HOME'
   }
+  environment {
+  registry = 'elly14/jkpipeline-demo'
+  registryCredential = 'IdDocker'
+  ...
+}
   stages {
     stage('Build'){
       steps {
@@ -16,16 +21,11 @@ pipeline {
         sh 'mvn test'
       }
     }  
-  stage('deploy'){
+  stage('deploy-DReg'){
       steps {
-        echo "Deploy step"
-        sleep 10
-      }
-    }  
-  stage('docker'){
-      steps {
-        echo "docker step"
-        sleep 10
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
+        }  
       }
     }  
    }
