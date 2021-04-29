@@ -6,6 +6,8 @@ pipeline {
   environment {
   registry = 'elly14/jkpipeline-demo'
   registryCredential = 'IDDocker'
+  dockerImage = ''  
+    
 }
   stages {
     stage('Build'){
@@ -23,7 +25,8 @@ pipeline {
   stage('deploy-DReg'){
       steps {
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          docker.withRegistry( '', registryCredential ) {
+          dockerImage.push()
         }  
       }
     }  
