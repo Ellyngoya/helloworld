@@ -6,7 +6,6 @@ pipeline {
   environment {
   registry = 'elly14/jkpipeline-demo'
   registryCredential = 'IdDocker'
-  ...
 }
   stages {
     stage('Build'){
