@@ -21,7 +21,6 @@ pipeline {
         sh 'mvn test'
       }
     }  
-  }
      stage('Deploy Image') {
       steps{
         script {
