@@ -5,7 +5,7 @@ pipeline {
   }
   environment {
     registry = "elly14/jkpipe-test"
-    registryCredential = 'IDDocker'
+    registryCredential = 'IdDocker'
     dockerImage = ''
   }
   stages {
