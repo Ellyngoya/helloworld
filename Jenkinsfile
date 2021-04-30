@@ -21,6 +21,7 @@ pipeline {
         sh 'mvn test'
       }
     }  
+  }
   stage('deploy-DReg'){
      stage('Deploy Image') {
       steps{
@@ -28,7 +29,6 @@ pipeline {
           docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
        }
-      }
      }
    }
  }
