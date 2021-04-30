@@ -4,11 +4,10 @@ pipeline {
    maven 'M2_HOME'
   }
   environment {
-  registry = 'elly14/jkpipeline-demo'
-  registryCredential = 'IDDocker'
-  dockerImage = ''  
-    
-}
+    registry = "elly14/jkpipe-test"
+    registryCredential = 'IDDocker'
+    dockerImage = ''
+  }
   stages {
     stage('Build'){
       steps {
@@ -23,11 +22,12 @@ pipeline {
       }
     }  
   stage('deploy-DReg'){
-      steps {
+     stage('Deploy Image') {
+      steps{
         script {
           docker.withRegistry( '', registryCredential ) {
-          dockerImage.push() 
-      }
-    }  
+            dockerImage.push()
+       }
+     }
    }
  }
